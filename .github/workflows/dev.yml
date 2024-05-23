@@ -1,8 +1,7 @@
 name: Auto Assign Pull Request
 
 on:
-  pull_request:
-    types: [opened]
+  push
 
 jobs:
   auto-assign:
@@ -12,7 +11,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Auto Assign Pull Request
-        uses: ashishsantikari/auto-assign-pr@v0.0.2-alpha
+        uses: ashishsantikari/auto-assign-pr@v0.0.1-alpha
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TEAM_SLUG: test
